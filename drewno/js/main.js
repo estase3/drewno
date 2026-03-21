@@ -1,33 +1,69 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // AOS scroll animations
-  AOS.init({ duration: 800, once: true, offset: 100 });
-
-  const navbar = document.getElementById('navbar');
-  const hero = document.getElementById('hero');
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  const scrollIndicator = document.getElementById('scrollIndicator');
-
-  // Show navbar after scrolling past hero
-  const heroObserver = new IntersectionObserver(([entry]) => {
-    navbar.classList.toggle('visible', !entry.isIntersecting);
-    if (scrollIndicator) scrollIndicator.classList.toggle('hidden', !entry.isIntersecting);
-  }, { threshold: 0.1 });
-  heroObserver.observe(hero);
-
-  // Mobile menu toggle
-  if (navToggle) {
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('open');
-      navLinks.classList.toggle('open');
-    });
-
-    // Close mobile menu on link click
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.classList.remove('open');
-        navLinks.classList.remove('open');
-      });
-    });
-  }
+// === Initialize AOS ===
+AOS.init({
+  duration: 800,
+  easing: 'ease-out',
+  once: true,
+  offset: 100
 });
+
+// === Navbar Visibility & Active Section Detection ===
+const navbar = document.getElementById('navbar');
+const scrollIndicator = document.getElementById('scrollIndicator');
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
+
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+  const heroHeight = document.getElementById('hero').offsetHeight;
+
+  // Show/hide navbar after hero section
+  if (currentScrollY > heroHeight - 100) {
+    navbar.classList.add('visible');
+  } else {
+    navbar.classList.remove('visible');
+  }
+
+  // Hide scroll indicator when scrolling down
+  if (scrollIndicator) {
+    if (currentScrollY > 200) {
+      scrollIndicator.style.opacity = '0';
+      scrollIndicator.style.pointerEvents = 'none';
+    } else {
+      scrollIndicator.style.opacity = '0.7';
+      scrollIndicator.style.pointerEvents = 'auto';
+    }
+  }
+
+  // Detect active section
+  let currentSection = '';
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    
+    if (currentScrollY >= sectionTop - 200) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+
+  // Update active nav link
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('data-section') === currentSection) {
+      link.classList.add('active');
+    }
+  });
+
+  lastScrollY = currentScrollY;
+});
+
+
+// === Scroll Indicator Click ===
+if (scrollIndicator) {
+  scrollIndicator.addEventListener('click', (e) => {
+    e.preventDefault();
+    const aboutSection = document.getElementById('about');
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
+  });
+}
