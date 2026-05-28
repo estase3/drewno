@@ -12,29 +12,9 @@ const scrollIndicator = document.getElementById('scrollIndicator');
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('section[id]');
 
-let lastScrollY = window.scrollY;
-
 window.addEventListener('scroll', () => {
   const currentScrollY = window.scrollY;
   const heroHeight = document.getElementById('hero').offsetHeight;
-
-  // Show/hide navbar after hero section
-  if (currentScrollY > heroHeight - 100) {
-    navbar.classList.add('visible');
-  } else {
-    navbar.classList.remove('visible');
-  }
-
-  // Hide scroll indicator when scrolling down
-  if (scrollIndicator) {
-    if (currentScrollY > 200) {
-      scrollIndicator.style.opacity = '0';
-      scrollIndicator.style.pointerEvents = 'none';
-    } else {
-      scrollIndicator.style.opacity = '0.7';
-      scrollIndicator.style.pointerEvents = 'auto';
-    }
-  }
 
   // Detect active section
   let currentSection = '';
@@ -55,7 +35,6 @@ window.addEventListener('scroll', () => {
     }
   });
 
-  lastScrollY = currentScrollY;
 });
 
 
