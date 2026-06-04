@@ -1,3 +1,22 @@
+// === Mobile Menu Toggle ===
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+
+menuToggle.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  mobileMenu.classList.toggle('flex');
+  const icon = menuToggle.querySelector('span');
+  icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+});
+
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('flex');
+    menuToggle.querySelector('span').textContent = 'menu';
+  });
+});
+
 // === Initialize AOS ===
 AOS.init({
   duration: 800,

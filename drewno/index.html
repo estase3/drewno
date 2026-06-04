@@ -70,7 +70,16 @@
         <a class="nav-link text-stone-600 font-medium transition-all duration-300 px-4 py-2 rounded-lg font-headline"
           href="#contact" data-section="contact">Kontakt</a>
       </div>
+      <button class="md:hidden flex items-center" id="menuToggle" aria-label="Open menu">
+        <span class="material-symbols-outlined text-primary text-3xl">menu</span>
+      </button>
     </nav>
+    <div class="md:hidden hidden flex-col gap-2 px-6 pb-4 bg-surface border-b border-stone-200" id="mobileMenu">
+      <a class="nav-link text-stone-600 font-medium py-2 font-headline" href="#about" data-section="about">O nas</a>
+      <a class="nav-link text-stone-600 font-medium py-2 font-headline" href="#gallery" data-section="gallery">Pieśni</a>
+      <a class="nav-link text-stone-600 font-medium py-2 font-headline" href="#videos" data-section="videos">Repertuar</a>
+      <a class="nav-link text-stone-600 font-medium py-2 font-headline" href="#contact" data-section="contact">Kontakt</a>
+    </div>
   </header>
 
   <!-- Hero Section -->
@@ -127,7 +136,7 @@
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgNWwRuGfGLeCsDOkLe8NcchiohnFUJaYO_IsbaDuBbMMH5iANdtvpArGZEtLlBKF8MvF1AiWGVY-eHIfLXbC2oGYip0J05rPxJAupNXhYwVZKUlZHa0tuYA_8z3CcbgYw2mulssFX-k7FF4CVJLAtPnGPFHZ9iz7gOJNeag4D9DClAltlrAC6JYSPyNglEYfJ2ErQxwqRQHk1Gfg9ux5DZP0hmMmJW60Lf8VwvyE8AZzq4WgY7_QTT71HD_BrRmwII0NXd_IVuQ" />
           </div>
           <div
-            class="absolute -bottom-6 -left-6 md:-left-12 p-8 bg-white/95 backdrop-blur-sm shadow-xl rounded-lg max-w-xs border border-surface-container-high">
+            class="hidden md:block absolute -bottom-6 -left-12 p-8 bg-white/95 backdrop-blur-sm shadow-xl rounded-lg max-w-xs border border-surface-container-high">
             <p class="font-headline italic text-xl text-primary">"Voices that bridge the gap between stone and sky."</p>
           </div>
         </div>
@@ -148,8 +157,8 @@
             href="#">Explore full gallery</a>
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[1000px] md:h-[700px]">
-        <div class="md:col-span-2 md:row-span-2 rounded-lg overflow-hidden group relative" data-aos="fade-right">
+      <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:h-[700px]">
+        <div class="md:col-span-2 md:row-span-2 rounded-lg overflow-hidden group relative h-64 md:h-auto" data-aos="fade-right">
           <img alt="Deep mystical forest scene with sun rays"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4RNcmUf07E1qM29WPYBPfkSxi3zJ103rXE7F14wv3ZJa0jdSHAeqlrtW7lxY7-1nyCap4HIERad4LC5yffv2stFwjJOCCAFeseelR3nqYrdsvrgxIO-7gCxVMJqTpF4P0VDCUzAs-DrXP8aQZl7VOzJYt_wpD6q2ukTg_Z-dQErQb3TIIKpmPtwtYSReUA2KKP68eiAbRK6Pvi0nWuz7rwtYMCQ59sa2GT8k4PgGjFtn5UwLYzNYgHtvi9WZKcbSfbCX0h6emrg" />
@@ -158,7 +167,7 @@
             <p class="text-white font-headline text-2xl italic">The Inspiration</p>
           </div>
         </div>
-        <div class="md:col-span-2 rounded-lg overflow-hidden group relative" data-aos="fade-left" data-aos-delay="100">
+        <div class="md:col-span-2 rounded-lg overflow-hidden group relative h-48 md:h-auto" data-aos="fade-left" data-aos-delay="100">
           <img alt="Traditional musical instruments close up"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRcLIvInsSq9B3up-nuhU8850KilboAJGRb6DbfIZGcMPQLbfsl-EgYmuTFHSizJK4TnQ5mUwJVPcEO501g9c-m6CvCJszLFsQZXDyCKQzgT0317doFx2HRTAyevFlsLzZZio2eX-9Cmnx2h4l55kkal1xCa_IFNgGr1PvPqdezEQawVHTBVZqduyL-d7rnSiu3FspqYbyGAaAcfinNiP9t3j2Ptr-CzTks8ViVG3j2fRPTg-QeuVmqi3oFz2b5R4zKDxq4CPboQ" />
@@ -167,12 +176,12 @@
             <p class="text-white font-label uppercase tracking-widest text-sm font-bold">Craftsmanship</p>
           </div>
         </div>
-        <div class="rounded-lg overflow-hidden group relative" data-aos="fade-up" data-aos-delay="200">
+        <div class="rounded-lg overflow-hidden group relative h-48 md:h-auto" data-aos="fade-up" data-aos-delay="200">
           <img alt="Mountain landscape during dawn"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_np5LJFzVWOlXPu7XiZdKDQr7g31sHSuqEr2f1HbNi2e4xSjFXbst63dxntD3541ZTDS-KcsXwV_al5mJHo5dKuYFVlP0E4tPLOe0hCnZNILkOTyKgkinpw-pd9idnYb4LOU8ItIjm2AmltmKPqJPXI-q10F-lXgBwF-huUOJ4qSVewBCc6Cma7Nnhciv2HKrlkMvEzllbPL4lapIli6d-oKsGC7QdDLIpgV2bex9o5ihlPpaHqdf_kMc8qqoty0SxL2bYzDyrA" />
         </div>
-        <div class="rounded-lg overflow-hidden group relative" data-aos="fade-up" data-aos-delay="300">
+        <div class="rounded-lg overflow-hidden group relative h-48 md:h-auto" data-aos="fade-up" data-aos-delay="300">
           <img alt="Folk performance on a wooden stage"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2PkT3dyvCGy0qXWySugtpGVM7ifs-K9w2ht93jmOEatUYhK0dmIHYKwjAjAzrjnv1Cw82khecGyHrcZBLAt48nDJ7Gq9N5VoKwPYssl0rvD7TzAEQayaz5r41IYswGB_3ZtAlZ_CEEqlSlUj-3GVHEg71yyVFX-2-H0hUzb2u42BD6wLuyV4BN1jOHC4X3qY9vwU1NmVI52H-wEb9ThcpQTgpwSoNmP4wfcUiAzXRCUti-sDd_aa9hCmSw087Ub9pdP6Kjj1Ekw" />
@@ -282,7 +291,7 @@
           <li><a class="hover:text-secondary transition-colors" href="#">Archiwum</a></li>
         </ul>
       </div>
-      <div class="flex flex-col justify-between items-end text-right">
+      <div class="flex flex-col justify-between md:items-end md:text-right">
         <div class="space-y-6">
           <h3 class="font-label text-xs tracking-[0.2em] text-white/60 uppercase font-bold mb-8">KONTAKT</h3>
           <div class="font-body text-on-primary/60 space-y-1">
