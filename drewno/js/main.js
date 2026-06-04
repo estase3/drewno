@@ -5,15 +5,16 @@ const mobileMenu = document.getElementById('mobileMenu');
 menuToggle.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
   mobileMenu.classList.toggle('flex');
-  const icon = menuToggle.querySelector('span');
-  icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+  document.getElementById('menuIcon').classList.toggle('hidden');
+  document.getElementById('closeIcon').classList.toggle('hidden');
 });
 
 mobileMenu.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     mobileMenu.classList.add('hidden');
     mobileMenu.classList.remove('flex');
-    menuToggle.querySelector('span').textContent = 'menu';
+    document.getElementById('menuIcon').classList.remove('hidden');
+    document.getElementById('closeIcon').classList.add('hidden');
   });
 });
 

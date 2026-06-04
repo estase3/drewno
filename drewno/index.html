@@ -51,7 +51,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="bg-surface text-on-surface font-body selection:bg-secondary selection:text-white">
+<body class="overflow-x-hidden bg-surface text-on-surface font-body selection:bg-secondary selection:text-white">
   <div class="texture-overlay"></div>
 
   <!-- Navbar -->
@@ -71,7 +71,8 @@
           href="#contact" data-section="contact">Kontakt</a>
       </div>
       <button class="md:hidden flex items-center" id="menuToggle" aria-label="Open menu">
-        <span class="material-symbols-outlined text-primary text-3xl">menu</span>
+        <svg class="w-7 h-7 text-primary" id="menuIcon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="w-7 h-7 text-primary hidden" id="closeIcon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/></svg>
       </button>
     </nav>
     <div class="md:hidden hidden flex-col gap-2 px-6 pb-4 bg-surface border-b border-stone-200" id="mobileMenu">
