@@ -66,3 +66,34 @@ if (scrollIndicator) {
     aboutSection.scrollIntoView({ behavior: 'smooth' });
   });
 }
+
+// === Form Submission via Fetch ===
+const contactForm = document.querySelector('#contact form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Wysyłanie...';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' },
+      });
+      if (res.ok) {
+        contactForm.innerHTML = '<p class="text-center text-xl font-headline text-primary py-8">Wiadomość wysłana — dziękujemy!</p>';
+      } else {
+        btn.textContent = 'Błąd — spróbuj ponownie';
+        btn.disabled = false;
+        setTimeout(() => { btn.textContent = originalText; }, 3000);
+      }
+    } catch {
+      btn.textContent = 'Błąd — spróbuj ponownie';
+      btn.disabled = false;
+      setTimeout(() => { btn.textContent = originalText; }, 3000);
+    }
+  });
+}
