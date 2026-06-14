@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth overflow-x-hidden" lang="en">
+<html class="scroll-smooth" lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -56,7 +56,7 @@
 
   <!-- Navbar -->
   <header class="site-navbar w-full sticky top-0 z-50 bg-surface border-b border-stone-200 shadow-sm" id="navbar">
-    <nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+    <nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto md:grid md:grid-cols-3 whitespace-nowrap">
       <div class="nav-logo flex items-center gap-2 text-2xl font-bold text-primary tracking-tight font-headline">
         <span>Drewno</span>
       </div>
@@ -64,22 +64,34 @@
         <a class="nav-link text-stone-600 font-medium transition-all duration-300 px-4 py-2 rounded-lg font-headline"
           href="#about" data-section="about">O nas</a>
         <a class="nav-link text-stone-600 font-medium transition-all duration-300 px-4 py-2 rounded-lg font-headline"
-          href="#gallery" data-section="gallery">Pieśni</a>
+          href="#gallery" data-section="gallery">Śpiew biały</a>
         <a class="nav-link text-stone-600 font-medium transition-all duration-300 px-4 py-2 rounded-lg font-headline"
-          href="#videos" data-section="videos">Repertuar</a>
+          href="#videos" data-section="videos">Galeria</a>
         <a class="nav-link text-stone-600 font-medium transition-all duration-300 px-4 py-2 rounded-lg font-headline"
           href="#contact" data-section="contact">Kontakt</a>
       </div>
-      <button class="md:hidden flex items-center" id="menuToggle" aria-label="Open menu">
-        <svg class="w-7 h-7 text-primary" id="menuIcon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        <svg class="w-7 h-7 text-primary hidden" id="closeIcon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/></svg>
-      </button>
+      <div class="flex items-center justify-end">
+        <a href="#videos"
+          class="hidden md:inline-block bg-primary text-white px-6 py-2.5 rounded-lg hover:bg-stone-800 transition-all shadow-lg font-headline">Słuchaj</a>
+        <button class="md:hidden flex items-center" id="menuToggle" aria-label="Open menu">
+          <svg class="w-7 h-7 text-primary" id="menuIcon" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg class="w-7 h-7 text-primary hidden" id="closeIcon" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" d="M6 6l12 12M6 18L18 6" />
+          </svg>
+        </button>
+      </div>
     </nav>
     <div class="md:hidden hidden flex-col gap-2 px-6 pb-4 bg-surface border-b border-stone-200" id="mobileMenu">
       <a class="nav-link text-stone-600 font-medium py-2 font-headline" href="#about" data-section="about">O nas</a>
-      <a class="nav-link text-stone-600 font-medium py-2 font-headline" href="#gallery" data-section="gallery">Pieśni</a>
-      <a class="nav-link text-stone-600 font-medium py-2 font-headline" href="#videos" data-section="videos">Repertuar</a>
-      <a class="nav-link text-stone-600 font-medium py-2 font-headline" href="#contact" data-section="contact">Kontakt</a>
+      <a class="nav-link text-stone-600 font-medium py-2 font-headline" href="#gallery" data-section="gallery">Śpiew
+        biały</a>
+      <a class="nav-link text-stone-600 font-medium py-2 font-headline" href="#videos" data-section="videos">Galeria</a>
+      <a class="nav-link text-stone-600 font-medium py-2 font-headline" href="#contact"
+        data-section="contact">Kontakt</a>
     </div>
   </header>
 
@@ -93,8 +105,9 @@
         </div>
         <p class="font-headline text-2xl md:text-5xl tracking-[0.2em] uppercase opacity-80 mt-10">Grupa śpiewu białego
         </p>
-        <div class="w-40 h-px bg-white/40 mx-auto my-8"></div>
-        <p class="font-headline text-l md:text-2xl tracking-wider uppercase opacity-70 mt-8">Tradycja · pieśń · serce
+        <div class="w-40 h-px bg-white mx-auto my-8"></div>
+        <p class="font-headline text-l md:text-2xl tracking-wider uppercase opacity-70 mt-8">Tradycyjne pieśni z różnych
+          wsi
         </p>
       </div>
     </div>
@@ -108,25 +121,24 @@
     <div class="py-32 px-6 md:px-12 max-w-7xl mx-auto" data-aos="fade-up">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
         <div class="md:col-span-7">
-          <span class="font-label text-sm tracking-[0.3em] text-secondary uppercase font-bold block mb-6">Our
-            Roots</span>
-          <h2 class="font-headline text-5xl md:text-7xl mb-10 leading-[1.1] text-primary">The Voice of the Ancient Earth
+          <span class="font-label text-sm tracking-[0.3em] text-secondary uppercase font-bold block mb-6">Nasze korzenie
+          </span>
+          <h2 class="font-headline text-5xl md:text-7xl mb-10 leading-[1.1] text-primary">Śpiewamy od 2009
           </h2>
           <div class="space-y-6 text-lg text-on-surface-variant leading-relaxed max-w-2xl font-body">
-            <p>Drewno is more than a musical group; it is a vessel for the resonant power of "white singing"
-              (śpiewokrzyk) – a traditional vocal technique from Central and Eastern Europe characterized by its raw,
-              open-throated intensity.</p>
-            <p>Our ensemble gathers the forgotten fragments of rural life, transcribing polyphonic melodies from elderly
-              masters and the rustle of the wind through the pines. Each performance is an invitation to witness the
-              living archive of our collective ancestry.</p>
+            <p>Powstaliśmy z zachwytu - ukraińską grupą Drevo i tym wszystkim, co kojarzy się z drewnem: ciepłem,
+              tradycją, czasem, przemijaniem.</p>
+            <p>Odtwarzamy pieśni wschodniosłowiańskie (polskie, ukraińskie, białoruskie, rosyjskie, bałkańskie, i inne)
+              tak, jak śpiewano je przed laty w naturalnych warunkach wiejskich chat. Czasem wyjdzie nam wolnej lub
+              szybciej, wyżej lub niżej, czasem z nieco innym akcentem - wtedy mówimy, że
+              pieśń jest teraz z „naszej wsi” i śpiewamy dalej, zawsze prosto z serca i z szacunkiem do pieśni i
+              historii, którą opowiada.</p>
           </div>
           <div class="mt-12">
             <button class="flex items-center gap-4 group">
               <span
-                class="w-12 h-12 rounded-lg border border-primary/20 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                <span class="material-symbols-outlined">arrow_forward</span>
-              </span>
-              <span class="font-headline font-bold tracking-wide text-primary">Read our full story</span>
+                class="font-headline font-bold tracking-wide border-b-2 border-secondary/40 pb-1 hover:text-secondary transition-colors">Więcej
+                o grupie Drewno</span>
             </button>
           </div>
         </div>
@@ -149,17 +161,16 @@
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
         <div class="max-w-xl">
-          <h2 class="font-headline text-5xl md:text-6xl mb-4 text-primary">Atmospheric Fragments</h2>
-          <p class="text-on-surface-variant font-body">Visual echoes of our travels, from the deepest forests to the
-            grandest concert halls.</p>
+          <h2 class="font-headline text-5xl md:text-6xl mb-4 text-primary">Galeria</h2>
         </div>
         <div class="pb-2">
           <a class="font-headline font-bold border-b-2 border-secondary/40 pb-1 hover:text-secondary transition-colors"
-            href="#">Explore full gallery</a>
+            href="#">Zobacz całą galerię</a>
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:h-[700px]">
-        <div class="md:col-span-2 md:row-span-2 rounded-lg overflow-hidden group relative h-64 md:h-auto" data-aos="fade-up">
+        <div class="md:col-span-2 md:row-span-2 rounded-lg overflow-hidden group relative h-64 md:h-auto"
+          data-aos="fade-up">
           <img alt="Deep mystical forest scene with sun rays"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4RNcmUf07E1qM29WPYBPfkSxi3zJ103rXE7F14wv3ZJa0jdSHAeqlrtW7lxY7-1nyCap4HIERad4LC5yffv2stFwjJOCCAFeseelR3nqYrdsvrgxIO-7gCxVMJqTpF4P0VDCUzAs-DrXP8aQZl7VOzJYt_wpD6q2ukTg_Z-dQErQb3TIIKpmPtwtYSReUA2KKP68eiAbRK6Pvi0nWuz7rwtYMCQ59sa2GT8k4PgGjFtn5UwLYzNYgHtvi9WZKcbSfbCX0h6emrg" />
@@ -168,7 +179,8 @@
             <p class="text-white font-headline text-2xl italic">The Inspiration</p>
           </div>
         </div>
-        <div class="md:col-span-2 rounded-lg overflow-hidden group relative h-48 md:h-auto" data-aos="fade-up" data-aos-delay="100">
+        <div class="md:col-span-2 rounded-lg overflow-hidden group relative h-48 md:h-auto" data-aos="fade-up"
+          data-aos-delay="100">
           <img alt="Traditional musical instruments close up"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRcLIvInsSq9B3up-nuhU8850KilboAJGRb6DbfIZGcMPQLbfsl-EgYmuTFHSizJK4TnQ5mUwJVPcEO501g9c-m6CvCJszLFsQZXDyCKQzgT0317doFx2HRTAyevFlsLzZZio2eX-9Cmnx2h4l55kkal1xCa_IFNgGr1PvPqdezEQawVHTBVZqduyL-d7rnSiu3FspqYbyGAaAcfinNiP9t3j2Ptr-CzTks8ViVG3j2fRPTg-QeuVmqi3oFz2b5R4zKDxq4CPboQ" />
@@ -195,23 +207,21 @@
   <section class="py-32 bg-surface" id="videos" data-aos="fade-up">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-20">
-        <span
-          class="font-label text-sm tracking-[0.3em] text-secondary uppercase block mb-4 font-bold">Performances</span>
-        <h2 class="font-headline text-5xl md:text-7xl text-primary">Live Resonance</h2>
+        <span class="font-label text-sm tracking-[0.3em] text-secondary uppercase block mb-4 font-bold">Nagrania</span>
+        <h2 class="font-headline text-5xl md:text-7xl text-primary">Posłuchaj nas</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
         <div class="space-y-6" data-aos="fade-up">
           <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
-            <iframe class="w-full h-full"
-              src="https://www.youtube.com/embed/rkcldd9ngIw?si=WgKU_pny0L6gIZ-h&amp;controls=0"
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/rkcldd9ngIw?si=WgKU_pny0L6gIZ-h&amp"
               title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           <div>
-            <h3 class="font-headline text-2xl font-bold text-primary">Midnight in the Orchard</h3>
-            <p class="text-on-surface-variant font-label text-sm uppercase tracking-wider mt-1">St. George's Cathedral,
-              2023</p>
+            <h3 class="font-headline text-2xl font-bold text-primary">Zespół Drewno</h3>
+            <p class="text-on-surface-variant font-label text-sm uppercase tracking-wider mt-1">Dom kultury Praszka,
+              2025</p>
           </div>
         </div>
         <div class="space-y-6" data-aos="fade-up" data-aos-delay="200">
@@ -222,8 +232,8 @@
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           <div>
-            <h3 class="font-headline text-2xl font-bold text-primary">The Echoes of Volhynia</h3>
-            <p class="text-on-surface-variant font-label text-sm uppercase tracking-wider mt-1">Open Air Festival, 2022
+            <h3 class="font-headline text-2xl font-bold text-primary">Pada deszczyk</h3>
+            <p class="text-on-surface-variant font-label text-sm uppercase tracking-wider mt-1">2013
             </p>
           </div>
         </div>
@@ -237,35 +247,37 @@
       class="max-w-4xl mx-auto bg-white rounded-lg p-8 md:p-20 shadow-xl relative overflow-hidden border border-surface-container">
       <div class="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full -mr-32 -mt-32"></div>
       <div class="relative z-10">
-        <h2 class="font-headline text-4xl md:text-5xl mb-4 text-center text-primary">Connect with Drewno</h2>
-        <p class="text-center text-on-surface-variant font-body mb-12 max-w-lg mx-auto">Inquire about performances,
-          workshops, or archival collaborations. We respond with the pace of the seasons.</p>
+        <h2 class="font-headline text-4xl md:text-5xl mb-4 text-center text-primary">Skontaktuj się z nami</h2>
+        <p class="text-center text-on-surface-variant font-body mb-12 max-w-lg mx-auto">Napisz w sprawie koncertu,
+          pośpiewajki, albo po prostu rozmawiać o pieśniach.
+          Na wiadomości odpowiadamy zgodnie z naturą, w tempie zmieniających się pór roku - nawet jeżeli powoli, to
+          nieuchronnie ;)</p>
         <form class="space-y-8">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-body">
             <div class="space-y-2">
-              <label class="font-label text-xs uppercase tracking-widest text-primary font-bold">Full Name</label>
+              <label class="font-label text-xs uppercase tracking-widest text-primary font-bold">Imię i nazwisko</label>
               <input
                 class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 transition-all px-0 pb-2 placeholder:text-outline-variant/50"
                 placeholder="Jan Kowalski" type="text" />
             </div>
             <div class="space-y-2">
-              <label class="font-label text-xs uppercase tracking-widest text-primary font-bold">Email Address</label>
+              <label class="font-label text-xs uppercase tracking-widest text-primary font-bold">Adres email</label>
               <input
                 class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 transition-all px-0 pb-2 placeholder:text-outline-variant/50"
                 placeholder="jan@example.com" type="email" />
             </div>
           </div>
           <div class="space-y-2 font-body">
-            <label class="font-label text-xs uppercase tracking-widest text-primary font-bold">Your Inquiry</label>
+            <label class="font-label text-xs uppercase tracking-widest text-primary font-bold">Wiadomość</label>
             <textarea
               class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 transition-all px-0 pb-2 placeholder:text-outline-variant/50"
-              placeholder="How can we help you?" rows="4"></textarea>
+              placeholder="O czym chcesz nam powiedzieć?" rows="4"></textarea>
           </div>
           <div class="pt-6 text-center">
             <button
               class="bg-primary text-white px-12 py-4 rounded-lg font-bold hover:bg-stone-800 transition-all shadow-lg active:scale-95"
               type="submit">
-              Send Message
+              Wyślij wiadomość
             </button>
           </div>
         </form>
@@ -279,17 +291,18 @@
       <div class="space-y-6">
         <h2 class="font-headline text-3xl italic text-on-primary/60">Drewno</h2>
         <p class="font-body text-on-primary/60 leading-relaxed max-w-sm">
-          Głosy ziemi, dusza przeszłości. Zespół pieśni tradycyjnej zafascynowany surowym brzmieniem polifonii
-          słowiańskiej.
+          Grupa Śpiewu Białego z Zielonej Góry odtwarzająca pieśni ludowe w ich tradycyjnym brzmieniu.
         </p>
       </div>
       <div class="md:pl-12">
         <h3 class="font-label text-xs tracking-[0.2em] text-white/60 uppercase font-bold mb-8">ZNAJDŹ NAS</h3>
         <ul class="space-y-4 font-body text-on-primary/60">
-          <li><a class="hover:text-secondary transition-colors" href="#">Facebook</a></li>
-          <li><a class="hover:text-secondary transition-colors" href="#">Instagram</a></li>
-          <li><a class="hover:text-secondary transition-colors" href="#">YouTube</a></li>
-          <li><a class="hover:text-secondary transition-colors" href="#">Archiwum</a></li>
+          <li><a class="hover:text-secondary transition-colors"
+              href="https://www.facebook.com/p/Grupa-Drewno-100047485692240/">Facebook</a></li>
+          <li><a class="hover:text-secondary transition-colors"
+              href="https://www.instagram.com/grupa.drewno">Instagram</a></li>
+          <li><a class="hover:text-secondary transition-colors"
+              href="https://youtube.com/@grupadrewno?si=nFeCxc7JkqDIJzZQ">YouTube</a></li>
         </ul>
       </div>
       <div class="flex flex-col justify-between md:items-end md:text-right">
@@ -297,12 +310,11 @@
           <h3 class="font-label text-xs tracking-[0.2em] text-white/60 uppercase font-bold mb-8">KONTAKT</h3>
           <div class="font-body text-on-primary/60 space-y-1">
             <p><a class="hover:text-secondary transition-colors"
-                href="mailto:kontakt@drewnochoir.pl">kontakt@drewnochoir.pl</a></p>
-            <p>+48 500 000 000</p>
+                href="mailto:grupa.drewno@gmail.com">grupa.drewno@gmail.com</a></p>
           </div>
         </div>
         <div class="mt-12 md:mt-0">
-          <p class="text-stone-400 text-xs font-body tracking-tight">© 2024 Drewno. Echo Przeszłości.</p>
+          <p class="text-stone-400 text-xs font-body tracking-tight">© 2026 Grupa Śpiewu Białego Drewno.</p>
         </div>
       </div>
     </div>
